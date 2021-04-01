@@ -10,12 +10,11 @@ import (
 // function declaration
 func main() {
 	// variable declarations
-  var stationName string
+  const stationName string = "Union Square"
   var nextTrainTime int8
   var isUptownTrain bool
   
 	// variable assignments
-  stationName = "Union Square"
   nextTrainTime = 12
   isUptownTrain = false
   
@@ -23,7 +22,6 @@ func main() {
   fmt.Println("Next train:", nextTrainTime, "minutes")
   fmt.Println("Is uptown:", isUptownTrain)
   
-  stationName = "Grand Central"
   nextTrainTime = 3
   isUptownTrain = true
   
