@@ -4,7 +4,7 @@ package main
 // syntax for importing multiple packages
 import (
 	"fmt"
-	"math"
+	m "math" // alias m
 )
 
 // function declaration
