@@ -1,32 +1,9 @@
-// package declaration for a Go program
 package main
 
-// syntax for importing multiple packages
-import (
-	"fmt"
-	m "math" // alias m
-)
+import m "math"
 
-// function declaration
-func main() {
-	// variable declarations
-  const stationName string = "Union Square"
-  var nextTrainTime int8
-  var isUptownTrain bool
-  
-	// variable assignments
-  nextTrainTime = 12
-  isUptownTrain = false
-  
-  fmt.Println("Current station:", stationName)
-  fmt.Println("Next train:", nextTrainTime, "minutes")
-  fmt.Println("Is uptown:", isUptownTrain)
-  
-  nextTrainTime = 3
-  isUptownTrain = true
-  
-  fmt.Println("")
-  fmt.Println("Current station:", stationName)
-  fmt.Println("Next train:", nextTrainTime, "minutes")
-  fmt.Println("Is uptown:", isUptownTrain)
-}
+const signedInt int8 = 127 // valid signed max integer8 value
+const unsignedInt uint8 = 255 // valid unsigned max integer8 value
+
+const negativeSignedInt int8 = -128 // valid signed negative integer value
+const negativeUnsignedInt uint8 = 0 // no negatives for unsigned int types 
