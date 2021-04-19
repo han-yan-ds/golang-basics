@@ -7,6 +7,7 @@ import "fmt"
 // function declaration
 func main() {
 	myDeck := newDeck()
+	myDeck.shuffle()
 	hand, _ := myDeck.deal(5)
 	// fmt.Println(hand.toString())
 	// fmt.Println(remaining.toString())

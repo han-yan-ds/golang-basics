@@ -3,8 +3,10 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"os"
 	"strings"
+	"time"
 )
 
 // create custom type (a "class")
@@ -45,4 +47,13 @@ func readDeckFromFile(filename string) deck {
 		os.Exit(1)
 	}
 	return deck(strings.Split(string(dataByteSlice), "\n"))
+}
+
+func (d deck) shuffle() {
+	seed := rand.NewSource(time.Now().UnixNano()) // random seed
+	randObj := rand.New(seed)
+	for index := range d {
+		swapPos := randObj.Intn(len(d) - 1)
+		d[index], d[swapPos] = d[swapPos], d[index]
+	}
 }
