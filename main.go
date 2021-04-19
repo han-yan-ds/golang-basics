@@ -7,8 +7,9 @@ import "fmt"
 // function declaration
 func main() {
 	myDeck := newDeck()
-	hand, remaining := myDeck.deal(5)
-	fmt.Println(hand.toString())
-	fmt.Println(remaining.toString())
+	hand, _ := myDeck.deal(5)
+	// fmt.Println(hand.toString())
+	// fmt.Println(remaining.toString())
 	hand.saveToFile("hand")
+	fmt.Println(readDeckFromFile(("hand")))
 }
