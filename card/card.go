@@ -1,7 +1,6 @@
 package card
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -18,10 +17,6 @@ const (
 type Card struct {
 	rank int
 	suit Suit
-}
-
-func init() {
-	fmt.Println("Card package initialized")
 }
 
 func CreateCard(rank string, suit Suit) Card {
