@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	card "golang-basics/app/card"
+	card "golang-basics/card"
 )
 
 func main() {

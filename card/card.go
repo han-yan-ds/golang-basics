@@ -1,6 +1,9 @@
 package card
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 // defining enums
 type Suit int
@@ -15,6 +18,10 @@ const (
 type Card struct {
 	rank int
 	suit Suit
+}
+
+func init() {
+	fmt.Println("Card package initialized")
 }
 
 func CreateCard(rank string, suit Suit) Card {
