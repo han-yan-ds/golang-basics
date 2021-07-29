@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	// "github.com/han-yan-ds/golang-basics/blob/OOP/app/card"
+	card "golang-basics/app/card"
 )
 
 func main() {
-	myCard := CreateCard("Ace", Hearts)
+	myCard := card.CreateCard("Ace", card.Hearts)
 	fmt.Print(myCard)
 }
