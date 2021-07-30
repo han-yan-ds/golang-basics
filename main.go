@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	card "golang-basics/card"
+	// card "golang-basics/card"
+	deck "golang-basics/deck"
 )
 
 func main() {
-	myCard := card.CreateCard("Ace", card.Hearts)
-	fmt.Print(myCard)
+	myDeck := deck.CreateDeck()
+	fmt.Print(myDeck)
 }
