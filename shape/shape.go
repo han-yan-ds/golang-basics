@@ -1,7 +1,9 @@
 package shape
 
+import "fmt"
+
 type Shape interface {
-	getArea() float32
+	GetArea() float32
 }
 
 type Triangle struct {
@@ -20,4 +22,8 @@ func (t Triangle) GetArea() float32 {
 
 func (r Rectangle) GetArea() float32 {
 	return r.Height * r.Base
+}
+
+func PrintArea(s Shape) {
+	fmt.Println(s.GetArea())
 }
