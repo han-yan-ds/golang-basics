@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"time"
 )
 
 func main() {
@@ -15,10 +14,10 @@ func main() {
 		"https://amazon.com",
 	}
 
-	c:= make(chan string)
+	ch := make(chan string)
 
 	for _, link := range links {
-		go checkLink(link, c)
+		go checkLink(link, ch)
 	}
 }
 
