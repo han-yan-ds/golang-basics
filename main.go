@@ -2,10 +2,13 @@ package main
 
 import (
 	"fmt"
-	card "golang-basics/card"
+	shape "golang-basics/shape"
 )
 
 func main() {
-	myCard := card.CreateCard("Ace", card.Hearts)
-	fmt.Print(myCard)
+	sampleTriangle := shape.Triangle{
+		Height: 1.5,
+		Base:   3.0,
+	}
+	fmt.Print(sampleTriangle.GetArea())
 }
