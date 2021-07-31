@@ -20,16 +20,21 @@ func main() {
 		go checkLink(link, ch)
 	}
 
-	for _, link := range links {
-		fmt.Println(link, <-ch)
+	i := 0
+	for msg := range ch { // this syntax looks at the channel and gets messages, assigns to msg.  It's nonstop
+		fmt.Println(msg)
+		i++
+		if i == len(links) { // this syntax is non-stop which is why we need this
+			return
+		}
 	}
 }
 
 func checkLink(link string, channel chan string) {
 	_, err := http.Get(link)
 	if err != nil {
-		channel <- "might be down :("
+		channel <- fmt.Sprint(link, " might be down :(")
 		return
 	}
-	channel <- "is up :)"
+	channel <- fmt.Sprint(link, " is up :)")
 }
