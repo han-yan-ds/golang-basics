@@ -16,9 +16,7 @@ func main() {
 	}
 
 	for _, link := range links {
-		go func(l string) {
-			checkLink(l)
-		}(link)
+		go checkLink(link)
 	}
 	time.Sleep(2 * time.Second)
 }
