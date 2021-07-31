@@ -14,30 +14,22 @@ func main() {
 		"https://amazon.com",
 	}
 
-	numDone := 0
-
-	ch := make(chan int)
+	ch := make(chan string)
 
 	for _, link := range links {
 		go checkLink(link, ch)
 	}
 
-	for { // keep running until all channels have received a value
-		numDone = numDone + <-ch
-		if numDone == len(links) {
-			return
-		}
+	for _, link := range links {
+		fmt.Println(link, <-ch)
 	}
-
 }
 
-func checkLink(link string, channel chan int) {
+func checkLink(link string, channel chan string) {
 	_, err := http.Get(link)
 	if err != nil {
-		fmt.Println(link, "might be down :(")
-		channel <- 1
+		channel <- "might be down :("
 		return
 	}
-	fmt.Println(link, "is up :)")
-	channel <- 1
+	channel <- "is up :)"
 }
